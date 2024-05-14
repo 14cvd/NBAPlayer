@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+enum NetworkError: Error {
+    case badURL
+    case requestFailed(Error)
+    case httpResponseFailed(statusCode: Int)
+    case serializationError
+    case emptyResult
+}

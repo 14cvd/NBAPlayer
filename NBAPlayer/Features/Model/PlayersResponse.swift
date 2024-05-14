@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct PlayersResponse: Codable {
+    let data: [Player]
+    let meta: Meta
+}
+
+

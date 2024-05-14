@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct Meta: Codable {
+    let nextCursor: Int
+    let perPage: Int
+
+    enum CodingKeys: String, CodingKey {
+        case nextCursor = "next_cursor"
+        case perPage = "per_page"
+    }
+}

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Team: Codable {
+    let id: Int
+    let city: String
+    let name: String
+}
