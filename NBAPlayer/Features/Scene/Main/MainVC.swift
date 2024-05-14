@@ -7,32 +7,48 @@
 
 import UIKit
 import SnapKit
+import Combine
+
 
 class MainVC: UIViewController {
+    private var cancellables = Set<AnyCancellable>()
     
     private lazy var  tableView : UITableView = {
         let tv = UITableView()
         tv.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.id)
-        tv.reloadData()
         tv.delegate = self
         tv.dataSource = self
+        tv.separatorStyle = .none
         return tv
         
     }()
-    private var item : [Player] = []
+    private var item : [Player] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-        NetworkManager.shared.fetch { result  in
-            switch result {
-            case .success(let players):
+        NetworkManager.shared.fetch()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("Finished fetching players.")
+                case .failure(let error):
+                    print("Error fetching players: \(error)")
+                }
+            }, receiveValue: { players in
+                // Handle fetched players
                 self.item = players
-                print(self.item)
-            case .failure(let failure):
-                print("Failure: \(failure)")
-            }
-        }
+                print("Fetched players: \(players)")
+            })
+            .store(in: &cancellables)
+
+        
         config()
         configConstraint()
     }
@@ -56,6 +72,7 @@ extension MainVC : UITableViewDelegate,UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.id, for: indexPath) as? MainTableViewCell else  {
             return UITableViewCell()
         }
+        tableView.allowsSelection = false
         cell.fetchData(item[indexPath.row])
         return cell
     }

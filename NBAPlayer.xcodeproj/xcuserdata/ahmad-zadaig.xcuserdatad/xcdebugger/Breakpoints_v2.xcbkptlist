@@ -7,17 +7,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "680B6263-9701-4388-A193-EBFF411FC73B"
-            shouldBeEnabled = "No"
+            uuid = "567FF9FA-0909-4E2A-A5AF-ED88D1FABB12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NBAPlayer/Features/Scene/Main/MainVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "529100C3-299B-4091-969A-D5E420D5CDF2"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NBAPlayer/Features/Nerworking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "makeAPICall(request:responseType:completion:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "fetch()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "529100C3-299B-4091-969A-D5E420D5CDF2 - a4957733cd9e92ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NBAPlayer.NetworkManager.fetch() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;NBAPlayer.Player&gt;, NBAPlayer.NetworkError&gt;"
+                  moduleName = "NBAPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmad-zadaig/Desktop/NBAPlayer/NBAPlayer/Features/Nerworking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23">
+               </Location>
+               <Location
+                  uuid = "529100C3-299B-4091-969A-D5E420D5CDF2 - bb2fd1cf58d08bf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (NBAPlayer.PlayersResponse) -&gt; Swift.Array&lt;NBAPlayer.Player&gt; in NBAPlayer.NetworkManager.fetch() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;NBAPlayer.Player&gt;, NBAPlayer.NetworkError&gt;"
+                  moduleName = "NBAPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmad-zadaig/Desktop/NBAPlayer/NBAPlayer/Features/Nerworking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
